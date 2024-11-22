@@ -1,5 +1,5 @@
 # Submiting a job with Condor
-## Required files
+## 1. Required files
 When submitting jobs that use python or julia, you need to create a bash script to initialize the environment and to run the code. 
 This requires a bash script `main.sh`, a python script, `main.py`, and a condor submit file `condor.sub`.
 ```
@@ -25,7 +25,7 @@ This is a simple python script that adds to random matrices together.
 ### condor.sub
 This is the condor submit file that specifies the job requirements and the path to the bash script. Read the comments in the file to understand the different parameters.
 
-## Submitting the job
+## 2. Submitting the job
 To submit the job, run the following command:
 ```condor_submit condor.sub```
 ### Checking the status of the job
