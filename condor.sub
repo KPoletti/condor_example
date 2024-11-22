@@ -1,0 +1,31 @@
+# This is a simple example of a HTCondor submit file
+
+# defines the defailt universe to run the job
+universe = vanilla
+# pass the environment variables to the job
+getenv = true
+
+# the executable to run for python scripts it easiest to use a shell script 
+executable              = main.sh
+# define the input to the shell script main.sh
+input                   = /path/to/condor_example/
+
+# the log, output, and error files for the job
+log                     = main.log # logs info such as disk usage
+output                  = main.out # logs any print statements/terminal outputs
+error                   = main.err # logs any errors from the job
+
+should_transfer_files   = Yes
+when_to_transfer_output = ON_EXIT
+
+# request resources for the job
+request_cpus            = 1
+request_memory          = 4GB
+request_disk            = 10GB
+
+# OPTIONAL: request a GPU
+request_GPUs = 1
+gpus_minimum_capability = 8.0
+gpus_minimum_memory = 4GB
+
+queue
